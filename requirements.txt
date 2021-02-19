@@ -1,2 +1,5 @@
 # Python game library
-pygame
+pygame~=2.0.1
+# Python math library
+numpy~=1.19.5
+matplotlib~=3.3.3

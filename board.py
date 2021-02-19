@@ -4,8 +4,8 @@ And added representation of Queen placement via Blue Circles.
 """
 
 import sys, pygame
-from n_queens import N
 
+N = 8
 pygame.init()
 
 
@@ -67,4 +67,10 @@ class Board:
 if __name__ == "__main__":
     # Used for testing purposes
     temp = [6, 1, 5, 2, 0, 3, 7, 4]
-    game = Board(temp)
+    # Used in project write-up
+    gen1 = [7, 4, 0, 0, 2, 6, 3, 3]
+    gen2 = [7, 4, 1, 7, 2, 6, 1, 3]
+    gen3 = [5, 5, 2, 7, 4, 6, 3, 5]
+    game1 = Board(gen1)
+    # game2 = Board(gen2)
+    # game3 = Board(gen3)

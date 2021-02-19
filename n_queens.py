@@ -62,6 +62,7 @@ class NQueens:
             prob_list.append(self.fitness(self.population[i]) / np.sum(fit_list))
         return prob_list
 
+    # Generates a new population based on the current one
     def breed(self):
         new_population = list()
         s_probs = self.survival_prob()  # list of parent survival probabilities
@@ -151,8 +152,13 @@ if __name__ == "__main__":
     fit_vals = list()
     avg_fitness_list = list()
     solved = False
+    chromosome_samples = list()
 
+    print("Searching for solutions...")
     while not solved and generations < MAX_ITER:
+        if randint(1, 100) <= 3:  # Samples random chromosome instances throughout generations
+            chromosome_samples.append([generations, game.population[randint(0, pop_size - 1)]])
+
         for i in range(len(game.population)):
             fit_vals.append(game.fitness(game.population[i]))
             solved = game.solution((game.population[i]))
@@ -163,19 +169,30 @@ if __name__ == "__main__":
             break
         generations += 1
 
+    """
+    Used for sample collection process
+    for _ in range(3):
+        print(chromosome_samples[randint(0, len(chromosome_samples) - 1)])
+    """
+
     plot(avg_fitness_list)  # generates a graph of average fitness over generation
 
     if generations == MAX_ITER:
         print("Max generations reached. No solution found.")
+        """
+        !Un-comment to see average fitness per-generation
         print("[Generation, Average Fitness]")
         for i in avg_fitness_list:
             print(i)
+        """
         sys.exit(1)
 
     print("generations: ", generations)
     print("Solution: ", game.population)
+    """
+    !Un-comment to see average fitness per-generation
     print("[Generation, Average Fitness]")
     for i in avg_fitness_list:
         print(i)
-
+    """
     board = board.Board(game.population)
