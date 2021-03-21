@@ -29,7 +29,7 @@ thus, the child will be ```[0, 5, 2, 7, 4, 6, 2, 0]```, since the first 3
  
 This breeding process is done population size times, each iteration, to ensure a constant population size.
 
-#### The following figure shows output of a solutions:
+#### The following figure shows output of a solution:
 ![solution](https://github.com/bralpdx/8Queen-GA/blob/master/figures/solution%20example.PNG)
 #### The following figure shows the average fitness value over generations. (Solution found in 444 generations):
 ![fitness values](https://github.com/bralpdx/8Queen-GA/blob/master/figures/fitness%20figure.png)
